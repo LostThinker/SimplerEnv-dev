@@ -28,6 +28,20 @@ ENVIRONMENTS = [
     "widowx_carrot_on_plate",
     "widowx_stack_cube",
     "widowx_put_eggplant_in_basket",
+    "widowx_carrot_on_plate_distractor",
+    "widowx_spoon_on_towel_distractor",
+    "widowx_stack_cube_distractor",
+    "widowx_unseen_on_plate",
+    "widowx_multi_on_plate",
+    "widowx_seq_on_plate",
+    "widowx_comb_on_plate",
+    "widowx_carrot_on_plate_lang_distractor",
+    "widowx_stack_cube_lang_distractor",
+    "widowx_spoon_on_towel_lang_distractor",
+    "widowx_vegetable_on_plate_ambig",
+    "widowx_drink_on_plate_ambig",
+    "widowx_fruit_on_plate_ambig",
+    "widowx_two_plate_ambig"
 ]
 
 ENVIRONMENT_MAP = {
@@ -61,7 +75,7 @@ ENVIRONMENT_MAP = {
     "google_robot_place_in_closed_middle_drawer": ("PlaceIntoClosedMiddleDrawerCustomInScene-v0", {}),
     "google_robot_place_in_closed_bottom_drawer": ("PlaceIntoClosedBottomDrawerCustomInScene-v0", {}),
     "google_robot_place_apple_in_closed_top_drawer": (
-        "PlaceIntoClosedTopDrawerCustomInScene-v0", 
+        "PlaceIntoClosedTopDrawerCustomInScene-v0",
         {"model_ids": "baked_apple_v2"}
     ),
     "widowx_spoon_on_towel": ("PutSpoonOnTableClothInScene-v0", {}),
@@ -70,12 +84,48 @@ ENVIRONMENT_MAP = {
     "widowx_put_eggplant_in_basket": ("PutEggplantInBasketScene-v0", {}),
 }
 
+DISTRACTOR_ENVIRONMENT_MAP = {
+    "widowx_carrot_on_plate_distractor": ("PutCarrotOnPlateInSceneDistract-v0", {}),
+    "widowx_spoon_on_towel_distractor": ("PutSpoonOnTableClothInSceneDistract-v0", {}),
+    "widowx_stack_cube_distractor": ("StackGreenCubeOnYellowCubeInSceneDistract-v0", {}),
+}
+
+UNSEEN_OBJ_ENV_MAP = {
+    "widowx_unseen_on_plate": ("PutUnseenObjOnPlateInScene-v0", {})
+}
+
+MULTI_OBJ_ENV_MAP = {
+    "widowx_multi_on_plate": ("PutOnPlateInSceneMulti-v0", {}),
+    "widowx_seq_on_plate": ("PutOnPlateInSceneSequence-v0", {}),
+    "widowx_comb_on_plate": ("PutOnPlateInSceneComb-v0", {})
+}
+
+# with language distractor
+LANGUAGE_DISTRACTOR_ENVIRONMENT_MAP = {
+    "widowx_carrot_on_plate_lang_distractor": ("PutCarrotOnPlateInSceneLangDistract-v0", {}),
+    "widowx_spoon_on_towel_lang_distractor": ("PutSpoonOnTableClothInSceneLangDistract-v0", {}),
+    "widowx_stack_cube_lang_distractor": ("StackGreenCubeOnYellowCubeInSceneLangDistract-v0", {}),
+}
+
+AMBIGUATE_ENV_MAP = {
+    "widowx_vegetable_on_plate_ambig": ("PutVegetableOnPlateInScene-v0", {}),
+    "widowx_drink_on_plate_ambig": ("PutDrinkOnPlateInScene-v0", {}),
+    "widowx_fruit_on_plate_ambig": ("PutFruitOnPlateInScene-v0", {}),
+    "widowx_two_plate_ambig": ("PutOnTwoPlateInScene-v0", {}),
+}
+
+ENVIRONMENT_MAP.update(DISTRACTOR_ENVIRONMENT_MAP)
+ENVIRONMENT_MAP.update(UNSEEN_OBJ_ENV_MAP)
+ENVIRONMENT_MAP.update(MULTI_OBJ_ENV_MAP)
+ENVIRONMENT_MAP.update(LANGUAGE_DISTRACTOR_ENVIRONMENT_MAP)
+ENVIRONMENT_MAP.update(AMBIGUATE_ENV_MAP)
+
 
 def make(task_name, **kwargs):
     """Creates simulated eval environment from task name."""
     assert task_name in ENVIRONMENTS, f"Task {task_name} is not supported. Environments: \n {ENVIRONMENTS}"
     env_name, env_kwargs = ENVIRONMENT_MAP[task_name]
-    
+
     env_kwargs["obs_mode"] = "rgbd",
     env_kwargs["prepackaged_config"] = True
 
