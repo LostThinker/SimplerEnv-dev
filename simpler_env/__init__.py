@@ -41,7 +41,10 @@ ENVIRONMENTS = [
     "widowx_vegetable_on_plate_ambig",
     "widowx_drink_on_plate_ambig",
     "widowx_fruit_on_plate_ambig",
-    "widowx_two_plate_ambig"
+    "widowx_two_plate_ambig",
+    "widowx_two_same_ambig",
+    "widowx_toy_bin_picking",
+    "widowx_fruit_on_plate_correction"
 ]
 
 ENVIRONMENT_MAP = {
@@ -97,7 +100,8 @@ UNSEEN_OBJ_ENV_MAP = {
 MULTI_OBJ_ENV_MAP = {
     "widowx_multi_on_plate": ("PutOnPlateInSceneMulti-v0", {}),
     "widowx_seq_on_plate": ("PutOnPlateInSceneSequence-v0", {}),
-    "widowx_comb_on_plate": ("PutOnPlateInSceneComb-v0", {})
+    "widowx_comb_on_plate": ("PutOnPlateInSceneComb-v0", {}),
+    "widowx_toy_bin_picking": ("PutToyOnBinInSceneMulti-v0", {})
 }
 
 # with language distractor
@@ -112,6 +116,11 @@ AMBIGUATE_ENV_MAP = {
     "widowx_drink_on_plate_ambig": ("PutDrinkOnPlateInScene-v0", {}),
     "widowx_fruit_on_plate_ambig": ("PutFruitOnPlateInScene-v0", {}),
     "widowx_two_plate_ambig": ("PutOnTwoPlateInScene-v0", {}),
+    "widowx_two_same_ambig": ("PutSameTwoOnPlateInScene-v0", {}),
+}
+
+CORRECTION_ENV_MAP = {
+    "widowx_fruit_on_plate_correction": ("PutFruitOnBinInSceneCorrection-v0", {})
 }
 
 ENVIRONMENT_MAP.update(DISTRACTOR_ENVIRONMENT_MAP)
@@ -119,6 +128,7 @@ ENVIRONMENT_MAP.update(UNSEEN_OBJ_ENV_MAP)
 ENVIRONMENT_MAP.update(MULTI_OBJ_ENV_MAP)
 ENVIRONMENT_MAP.update(LANGUAGE_DISTRACTOR_ENVIRONMENT_MAP)
 ENVIRONMENT_MAP.update(AMBIGUATE_ENV_MAP)
+ENVIRONMENT_MAP.update(CORRECTION_ENV_MAP)
 
 
 def make(task_name, **kwargs):
