@@ -175,6 +175,6 @@ for i in range(total_episode_num):
 ## Asset generation and import
 
 All new assets are generated using [Hunyuan3D](https://3d.hunyuan.tencent.com/).
-see [this guide](https://github.com/LostThinker/SimplerEnv-dev/README_ASSET.md) to learn how to add assets.
+see [this guide](https://github.com/LostThinker/SimplerEnv-dev/blob/main/README_ASSET.md) to learn how to add assets.
 
 

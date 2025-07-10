@@ -24,11 +24,11 @@ Use Hunyuan3D to create high-quality 3D object assets from text or image prompts
 
 #### Export the '.dae' and '.obj' Files
 1. Go to `File > Export > Collada (.dae)`, export the file as **`textured.dae`** using the settings shown below:  
-   ![Figure 1: Recommended DAE export settings](path/to/figure1.png)
+<img src="./images/blender_guide/dae_setting.png" width="128" height="128" >
 2. Go to `File > Export > Wavefront (.obj)`, export the file as **`collision.obj`** using the settings shown below:  
-   ![Figure 2: Recommended OBJ export settings](path/to/figure2.png)
-3. You will then get the following three files:
-   ![Figure 2: Recommended OBJ export settings](path/to/figure3.png)
+<img src="./images/blender_guide/obj_setting.png" width="128" height="128" >
+3. You will then get the following three files like this:
+<img src="./images/blender_guide/export_files.png" width="128" height="128" >
 4. Put these three files into a single folder and give it a name, for example, **`my_obj`**. 
 
 ### 🗂️ Step 3: Import the Exported Files into SimplerEnv
