@@ -42,7 +42,7 @@ print("Episode stats", episode_stats)
 ```
 
 Additionally, you can play with our environments in an interactive manner
-through [`ManiSkill2_real2sim/mani_skill2_real2sim/examples/demo_manual_control_custom_envs.py`](https://github.com/simpler-env/ManiSkill2_real2sim/blob/main/mani_skill2_real2sim/examples/demo_manual_control_custom_envs.py).
+through [`ManiSkill2_real2sim/mani_skill2_real2sim/examples/demo_manual_control_custom_envs.py`](https://github.com/LostThinker/ManiSkill2_real2sim/blob/main/mani_skill2_real2sim/examples/demo_manual_control_custom_envs.py).
 See the script for more details and commands.
 
 ## Installation
