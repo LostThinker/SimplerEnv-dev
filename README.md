@@ -160,7 +160,7 @@ for i in range(total_episode_num):
 | widowx_put_fruit_tg        | PutFruitObjOnTarget-v0    | <img src="./images/example_visualization/widowx_put_fruit_tg.png" width="128" height="128" >        |
 | widowx_put_obj_tg_semantic | PutObjOnTargetSemantic-v0 | <img src="./images/example_visualization/widowx_put_obj_tg_semantic.png" width="128" height="128" > |
 
-### long-horizon
+### Long-horizon
 
 | Task Name                   | ManiSkill2 Env Name           | Image (Visual Matching)                                                                              |
 |-----------------------------|-------------------------------|------------------------------------------------------------------------------------------------------|
